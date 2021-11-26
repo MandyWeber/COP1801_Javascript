@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset= "utf-8">
+  <title>Types of Loops</title>
+  </head>
+  <body>
+<h1>Task 1</h1>
+<p id="task1"></p>
+
+<h1>Task 2</h1>
+<p id="task2"></p>
+
+<h1>Task 3</h1>
+<p id="task3"></p>
+<p id="task03"></p>
+
+
+  <script>
+  //Task 1
+  let numbers = "";
+  for (let i = 0; i <= 10; i++) {
+
+  //check if the number is even
+if(i % 2 == 0) {
+    numbers += "Number " + i + " is even." + "<br>";
+}
+// if the number is odd
+else {
+    numbers += "Number " + i + " is odd." + "<br>";
+  }
+}
+  document.getElementById("task1").innerHTML = numbers;
+//Task 2
+//Asking user for a random number
+var myNum = prompt("Enter a number between 5 and 20.");
+  var num = "";
+  var a = 1;
+  do {
+    num += "<br>The number is " + a;
+    a++;
+}
+  while (a <= myNum);
+document.getElementById("task2").innerHTML = num;
+
+
+//Task 3
+let text = "";
+const subjects = ["Accounting", " Algebra", " Programming", " Art", " Data Analytics"];
+subjects.forEach(myFunction);
+
+document.getElementById("task3").innerHTML = text;
+
+function myFunction(item, index) {
+  text += index + ": " + item + "<br>";
+}
+
+document.getElementById("task03").innerHTML = subjects;
+
+  </script>
+  </body>
+  </html>
