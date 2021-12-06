@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset= "utf-8">
+  <title>Functions!</title>
+  </head>
+  <body>
+<!-- price button function -->
+    <p>Please input the price of your meal between $5.00 and $500.00:</p>
+
+    <input id="mealPrice">
+
+    <button type="button" onclick="priceFunction()">Submit</button>
+
+    <p id="Price"></p>
+<!-- service button function -->
+    <p>Please tell us if your service was poor, ok, or great!</p>
+
+    <input id="serviceQuality">
+
+    <button type="button" onclick="serviceFunction()">Submit</button>
+
+    <p id="Service"></p>
+<!-- tip button function -->
+
+  <p> Click below to find your tip amount. </p>
+
+  <button type="button" onclick="tipFunction()">Click me!</button>
+
+  <p id="Tip"></p>
+
+  <script>
+  function priceFunction() {
+    // Get the value of the input field with id="mealPrice"
+    let y = document.getElementById("mealPrice").value;
+    // If x is Not a Number or less than 5 or greater than 500
+    let text;
+    if (isNaN(y) || y < 5.00 || y > 500.00) {
+      text = "Input not valid.";
+    } else {
+      text = "Thank you!";
+    }
+    document.getElementById("Price").innerHTML = text;
+  }
+
+  let serviceFunction = () => {
+    // Get the value of the input field with id="mealPrice"
+    let x = document.getElementById("serviceQuality").value;
+
+    let output;
+    if (x != "ok" && x != "poor" && x != "great") {
+      output = "Input not valid.";
+    } else {
+      output = "Thank you for your feedback!";
+    }
+    document.getElementById("Service").innerHTML = output;
+  }
+  function tipFunction() {
+
+    let x = document.getElementById("serviceQuality").value;
+
+    let y = document.getElementById("mealPrice").value;
+
+    let output;
+
+    if (x == "poor"){
+      let tipAmount1 = .10 * parseInt(y);
+      output = "You should tip $" + tipAmount1.toFixed(2) + " because the bill was $" + y + " and the service was poor.";
+    }
+    else if(x == "ok"){
+      let tipAmount2 = .15 * parseInt(y);
+      output = "You should tip $" + tipAmount2.toFixed(2) + " because the bill was $" + y + " and the service was ok.";
+    }
+    else if (x == "great"){
+      let tipAmount3 = .20 * parseInt(y);
+      output = "You should tip $" + tipAmount3.toFixed(2) + " because the bill was $" + y + " and the service was great!";
+    }
+    else {
+      output = "Input not valid.";
+    }
+    document.getElementById("Tip").innerHTML = output;
+  }
+
+
+
+  </script>
+
+  </body>
+  </html>
