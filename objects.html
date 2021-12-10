@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset= "utf-8">
+<title>Objects</title>
+</head>
+<body>
+  <h4>Below shows the use of an object literal.</h4>
+  <p id="Dog"></p>
+
+  <h4>The statement below shows if the dog an talk or not after adding the canTalk property.</h4>
+  <p id="Talk"></p>
+
+  <h4>Below shows that I made an object method called myGreeting and called it to display the greeting below.</h4>
+  <p id="Greeting"></p>
+<script>
+
+//Here is my object literal on one line.
+var dog = {show : "Rugrats", name : "Spike", breed : "Siberian Tiger Hound", note : "Fifi's boyfriend and the Pickles' family dog; about eight babies as well as two dogs and their day-to-day lives."};
+
+//I'm adding the value mySound to the dog object.
+//I then display a message with all the values from the dog object.
+dog.mySound = "I sound like a mean scary dog when I bark!";
+text = "Hi my name is " + dog.name + " and I'm the dog from " + dog.show + ". I'm a " + dog.breed + " and " + dog.mySound + " Here is a brief summary about my character: " + dog.note;
+document.getElementById("Dog").innerHTML = text;
+
+//This is where I make an object constructor and I added the object method myGreeting.
+var myDogConst = new Object();
+myDogConst.show = "Rugrats";
+myDogConst.name = "Spike";
+myDogConst.breed = "Siberian Tiger Hound";
+myDogConst.note = "Fifi's boyfriend and the Pickles' family dog; about eight babies as well as two dogs and their day-to-day lives."
+myDogConst.sound = "I sound like a mean scary dog when I bark!"
+myGreeting = function() {
+    return "Hi my name is " + myDogConst.name + " and I'm the dog from " + myDogConst.show + ". I'm a " + myDogConst.breed + " and " + myDogConst.sound + " Here is a brief summary about my character: " + myDogConst.note;
+  }
+// Here I add the property canTalk to tell if the dog can talk or not with true or false. I then use an ID to display it on the webpage.
+myDogConst.canTalk = "false";
+document.getElementById("Talk").innerHTML =
+"It is " + myDogConst.canTalk + " that " + myDogConst.name + " can talk.";
+
+// Here I call the object method myGreeting to display the elements of the object method.
+document.getElementById("Greeting").innerHTML = myGreeting();
+</script>
+</body>
+</html>
