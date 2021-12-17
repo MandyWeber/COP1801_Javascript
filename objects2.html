@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset= "utf-8">
+<title>Objects</title>
+</head>
+<body>
+  <h4>Below shows the use of an object literal.</h4>
+  <p id="Dog"></p>
+
+ <!-- Here I prompt the user to pick a dog. -->
+  <p>Please choose Spike, Brian, or Courage.</p>
+
+  <input id="myInput" type="text">
+
+  <button type="button" onclick="myGreeting()">Submit</button>
+
+  <p id="Input"></p>
+
+<script>
+
+
+//Here is my object literal on one line.
+var dog =  {show : "Rugrats", name : "Spike", breed : "Siberian Tiger Hound", note : "Fifi's boyfriend and the Pickles' family dog; about eight babies as well as two dogs and their day-to-day lives."};
+
+//I'm adding the value mySound to the dog object.
+//I then display a message with all the values from the dog object.
+dog.mySound = "I sound like a mean scary dog when I bark!";
+text = "Hi my name is " + dog.name + " and I'm the dog from " + dog.show + ". I'm a " + dog.breed + " and " + dog.mySound + " Here is a brief summary about my character: " + dog.note;
+document.getElementById("Dog").innerHTML = text;
+
+//This is where I make an object constructor and I added the object method myGreeting.
+var myDogConst = new Object();
+myDogConst.show = "Rugrats";
+myDogConst.name = "Spike";
+myDogConst.breed = "Siberian Tiger Hound";
+myDogConst.note = "Fifi's boyfriend and the Pickles' family dog; about eight babies as well as two dogs and their day-to-day lives.";
+myDogConst.sound = "I sound like a mean scary dog when I bark!";
+myDogConst.talk = "I cannot talk!";
+
+myGreeting = function() {
+
+  var text;
+  var dogs = document.getElementById("myInput").value;
+
+  switch (dogs) {
+    case "Spike":
+        text = "Hi my name is " + myDogConst.name + " and I'm the dog from " + myDogConst.show + ". "  + myDogConst.talk + " I'm a " + myDogConst.breed + " and " + myDogConst.sound + " Here is a brief summary about my character: " + myDogConst.note;
+        break;
+    case "Brian":
+        text = "Hi my name is " + dog2.name + " and I'm the dog from " + dog2.show + ". "  + dog2.talk + " I'm a " + dog2.breed + " and " + dog2.sound + " Here is a brief summary about my character: " + dog2.note;
+        break;
+    case "Courage":
+        text = "Hi my name is " + dog3.name + " and I'm the dog from " + dog3.show + ". "  + dog3.talk + " I'm a " + dog3.breed + " and " + dog3.sound + " Here is a brief summary about my character: " + dog3.note;
+        break;
+    default:
+        text = "Input not valid. Please choose a valid dog.";
+}
+document.getElementById("Input").innerHTML = text;
+
+  }
+
+  function Dog(show, name, breed, note, talk) {
+  this.show = show;
+  this.name = name;
+  this.breed = breed;
+  this.note = note;
+  this.talk = talk;
+}
+const dog2 = new Dog("Family Guy", "Brian", "White Labrador Retriever", "The family dog and equal family member; about the Griffins, a dysfunctional family.", "I can talk!");
+let txt = "";
+for (let Dog in dog2) {
+  console.log(Dog + "-->" + dog2[Dog]);
+  txt += dog2[Dog] + " ";
+
+}
+
+const dog3 = new Dog("Courage The Cowardly Dog", "Courage", "Beagle", "About an anthropomorphic dog who lives with a married couple of elderly farmers in the 'Middle of Nowhere'.", "I can talk!");
+let output = "";
+for (let Dog in dog3) {
+  console.log(Dog + "-->" + dog3[Dog])
+  output += dog3[Dog] + " ";
+
+}
+
+</script>
+</body>
+</html>
